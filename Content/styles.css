@@ -1,0 +1,15 @@
+﻿body{
+    background-color: #FFFF99;
+}
+.navbar{
+    margin-top: 35px;
+    background-color: inherit;
+    border: none;
+}
+
+.nav a{
+    border: none;
+}
+a{
+    font : #66CCFF;
+}

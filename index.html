@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html data-ng-app="myApp">
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/bootstrap-responsive.min.css" rel="stylesheet" />
+    <link href="Content/styles.css" rel="stylesheet" />
+</head>
+<body>
+
+    <nav class="navbar navbar-inverse">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href >All Projects!</a>
+            </div>
+            <div>
+
+
+                <ul class="nav navbar-nav navbar-right" data-ng-controller="statusController">
+                    <li><a href data-ng-click="addModal()"><span class="glyphicon glyphicon-plus"></span> Add New Status</a></li>
+                    <li><a href  data-ng-click="deleteAllCards()"><span class="glyphicon glyphicon-trash"></span> Delete All Cards</a></li>
+                    <li><a href  data-ng-click="deleteAllLists()"><span class="glyphicon glyphicon-trash"></span> Delete All Lists</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Note that AngularJS 1.2+ now has a built-in ng-animation direction. Left in animated-view to show a 
+         custom directive -->
+    <div animated-view></div>
+
+
+    <div id="footer">
+        <div class="navbar navbar-fixed-bottom">
+            <div class="navbar-inner">
+                <div class="container">
+                    <footer>
+                        <div class="row" data-ng-controller="statusController">
+                                    <div class = "panel-body" data-drop="true" jqyoui-droppable = '{onDrop : "deleteItem()"}'>Drop here to Delete!</div>
+                        </div>
+                   </footer>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Vendor Libs: jQuery only used for Bootstrap functionality -->
+    <script src="Scripts/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/angular-route.js"></script>
+    <script src="http://code.angularjs.org/1.2.1/angular-sanitize.min.js"></script>
+    <script src="Scripts/sortable.min.js"></script>
+    <script src ="Scripts/angular-dragdrop.min.js"></script>
+    <script src="Scripts/ui-bootstrap-tpls-0.13.0.min.js"></script>
+    <!-- UI Libs -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+
+    <!-- App libs -->
+    <script src="app.js"></script>
+    <script src="controllers/controllers.js"></script>
+    <script src="services/services.js"></script>
+    <script src="directives/animatedView.js"></script>
+</body>
+</html>
