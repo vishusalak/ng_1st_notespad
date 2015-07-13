@@ -3,4 +3,5 @@ var express = require('express'),
 
 app.use(express.static(__dirname + ''));
 
-app.listen(8888)
+var port = Number(process.env.PORT || 3000);
+app.listen(port);

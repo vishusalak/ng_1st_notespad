@@ -4,6 +4,7 @@
     <title></title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="http://fonts.googleapis.com/css?family=Reenie+Beanie:regular" rel="stylesheet" type="text/css">
     <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" />
     <link href="Content/bootstrap-responsive.min.css" rel="stylesheet" />
     <link href="Content/styles.css" rel="stylesheet" />
@@ -30,21 +31,28 @@
     <!-- Note that AngularJS 1.2+ now has a built-in ng-animation direction. Left in animated-view to show a 
          custom directive -->
     <div animated-view></div>
-
-
-    <div id="footer">
-        <div class="navbar navbar-fixed-bottom">
-            <div class="navbar-inner">
-                <div class="container">
-                    <footer>
-                        <div class="row" data-ng-controller="statusController">
-                                    <div class = "panel-body" data-drop="true" jqyoui-droppable = '{onDrop : "deleteItem()"}'>Drop here to Delete!</div>
-                        </div>
-                   </footer>
-                </div>
-            </div>
+    <div id="browserWarning">
+        <div style="width: 400px; margin: 40px auto; border: 3px solid #ddd; font-size: 15px;">
+            <b>Error:</b> Oops! If you are seeing this, your browser is
+            not loading the page correctly. Please try pressing Control-F5 to force reload
+            the page. If this doesn't work, you may need to update your browser: <br/><a href=http://www.getfirefox.com>Download Firefox</a> | <a href=http://www.google.com/chrome>Download Chrome</a> | <a href=http://www.microsoft.com/windows/internet-explorer/default.aspx>Download
+            IE</a>
         </div>
     </div>
+
+    <!--<div id="footer">-->
+        <!--<div class="navbar navbar-fixed-bottom">-->
+            <!--<div class="navbar-inner">-->
+                <!--<div class="container">-->
+                    <div class = "deleteBox">
+                        <div data-ng-controller="statusController">
+                                    <div data-drop="true" jqyoui-droppable = '{onDrop : "deleteItem()"}'>Drop here to Delete!</div>
+                        </div>
+                   </div>
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
 
     <!-- Vendor Libs: jQuery only used for Bootstrap functionality -->
     <script src="Scripts/jquery.min.js"></script>

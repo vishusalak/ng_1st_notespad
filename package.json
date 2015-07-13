@@ -1,7 +1,7 @@
 {
-  "name": "AngularJSDemos",
+  "name": "notespad",
   "version": "1.0.0",
-  "description": "Angular Demos",
+  "description": "first angular project on angular",
   "main": "server.js",
   "dependencies": {
     "express": "^4.11.2"
@@ -14,6 +14,6 @@
     "Angular",
     "JavaScript"
   ],
-  "author": "Dan Wahlin",
-  "license": "MIT"
+  "author": "Vishesh",
+  "license": ""
 }

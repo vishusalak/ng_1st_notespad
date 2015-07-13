@@ -29,9 +29,7 @@
     margin-right:5px;
 }
 
-.cardContainer {
-    width:90%;
-}
+
 
 .cardBody {
     padding-left: 5px;
@@ -67,3 +65,10 @@ footer {
 .close {
     opacity: 1.0;
 }
+
+colors #CBE8F8 - blue
+       #C3F4BD - green
+       #EFBFEF - pink
+       #D6CEFD - violet
+       #F6F6F6 - white
+

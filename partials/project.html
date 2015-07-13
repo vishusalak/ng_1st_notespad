@@ -17,8 +17,8 @@
         </script>
             <div class="row cardContainer">
                 <div class="col-md-3 panel panel-default" data-ng-repeat="stat in status ">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">{{stat.statusName}}</h3>
+                    <div class="panel-header">
+                        <h2 class="panel-title">{{stat.statusName}}</h2>
                         <div class="dropdown">
                         <button class="btn dropdown-toggle" type="button" data-toggle = "dropdown" data-hover="dropdown">
                             <span class ="glyphicon glyphicon-cog" ></span>
@@ -32,11 +32,11 @@
                     </div>
                     <div data-drop="true" jqyoui-droppable = '{onDrop : "droppedItem()"}'>
                     <div class="panel-body" data-ng-repeat = "card in cards | filter:{'status_id' : stat.id }:true" data-drop="true" data-jqyoui-options jqyoui-droppable = '{onDrop : "droppedItem()"}' >
-                        <div data-drop="true" data-jqyoui-options jqyoui-droppable = '{onDrop : "droppedItem()"}'>
-                        <p class="well" data-drag="true" data-drop="true" jqyoui-droppable = '{onDrop : "droppedItem()"}' data-jqyoui-options="{revert: 'invalid'}" jqyoui-draggable='{animate:true ,onDrag :"draggedItem()"}' data-ng-model="card[stat.id]">
+                        <div class="card" data-drop="true" data-jqyoui-options jqyoui-droppable = '{onDrop : "droppedItem()"}'>
+                        <div class="well cardText" data-drag="true" data-drop="true" jqyoui-droppable = '{onDrop : "droppedItem()"}' data-jqyoui-options="{revert: 'invalid'}" jqyoui-draggable='{animate:true ,onDrag :"draggedItem()"}' data-ng-model="card[stat.id]">
                             {{card.content}} <!--{{card.status_id}} {{card.id}}-->
                         <button class="btn close cardClose" data-ng-click="deleteCard(card.id)"><span class="glyphicon glyphicon-trash"></span></button>
-                        </p>
+                        </div>
                         </div>
                     </div>
                     </div>
@@ -47,7 +47,7 @@
                         </form>
                     </div>
                 </div>
-                <div class = "col-md-3 thumbnail">
+                <div class = "col-md-3 thumbnail panel">
                     <form ng-submit = "addStatus()">
                     <input type="text" class="form-control" id = "focusedInput" data-ng-model="data.newStatusName" placeholder = "Add New Status.." />
 
