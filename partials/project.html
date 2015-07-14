@@ -15,12 +15,12 @@
                 <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
             </div>
         </script>
-            <div class="row cardContainer">
-                <div class="col-md-3 panel panel-default" data-ng-repeat="stat in status ">
-                    <div class="panel-header">
-                        <h2 class="panel-title">{{stat.statusName}}</h2>
-                        <div class="dropdown">
-                        <button class="btn dropdown-toggle" type="button" data-toggle = "dropdown" data-hover="dropdown">
+            <div class="row statusContainer">
+                <article class="col-md-3 status" data-ng-style="randomColor" data-ng-repeat="stat in status ">
+                    <header class="statusHeader" >
+                        {{stat.statusName}}
+                        <div class="dropdown  setBtn">
+                        <button class="btn dropdown-toggle" type="button" data-toggle = "dropdown">
                             <span class ="glyphicon glyphicon-cog" ></span>
                         </button>
                         <ul class = "dropdown-menu">
@@ -29,25 +29,28 @@
                             <li><a href data-ng-click="deleteStatus(stat.id)">Delete List</a></li>
                         </ul>
                         </div>
-                    </div>
-                    <div data-drop="true" jqyoui-droppable = '{onDrop : "droppedItem()"}'>
-                    <div class="panel-body" data-ng-repeat = "card in cards | filter:{'status_id' : stat.id }:true" data-drop="true" data-jqyoui-options jqyoui-droppable = '{onDrop : "droppedItem()"}' >
-                        <div class="card" data-drop="true" data-jqyoui-options jqyoui-droppable = '{onDrop : "droppedItem()"}'>
-                        <div class="well cardText" data-drag="true" data-drop="true" jqyoui-droppable = '{onDrop : "droppedItem()"}' data-jqyoui-options="{revert: 'invalid'}" jqyoui-draggable='{animate:true ,onDrag :"draggedItem()"}' data-ng-model="card[stat.id]">
-                            {{card.content}} <!--{{card.status_id}} {{card.id}}-->
-                        <button class="btn close cardClose" data-ng-click="deleteCard(card.id)"><span class="glyphicon glyphicon-trash"></span></button>
+                    </header>
+                    <!--<div data-drop="true" jqyoui-droppable = '{onDrop : "droppedItem()"}'>-->
+                    <div class="StatusBody" data-ng-repeat = "card in cards | filter:{'status_id' : stat.id }:true" data-drop="true" data-jqyoui-options jqyoui-droppable = '{onDrop : "droppedItem()"}' >
+                        <!--<div class="card" data-drop="true" data-jqyoui-options jqyoui-droppable = '{onDrop : "droppedItem()"}'>-->
+                        <div class = "card" data-drag="true" data-drop="true" jqyoui-droppable = '{onDrop : "droppedItem()"}' data-jqyoui-options="{revert: 'invalid'}" jqyoui-draggable='{animate:true ,onDrag :"draggedItem()"}' data-ng-model="card[stat.id]">
+                           <p class="cardText">
+                               {{card.content}} <!--{{card.status_id}} {{card.id}}-->
+                           </p>
+                            <button class="btn close cardClose" data-ng-click="deleteCard(card.id)"><span class="glyphicon glyphicon-trash"></span></button>
                         </div>
-                        </div>
+                        <!--</div>-->
                     </div>
-                    </div>
-                    <div class="panel-footer" data-ng-controller="statusController">
+                    <!--</div>-->
+                    <footer class="statusFooter" data-ng-controller="statusController">
                         <form name="myform" ng-submit="addCard(stat.id)">
-                            <input type="text" class="form-control" id = "focusedInput" data-ng-model= 'data.cardContent[stat.id]' placeholder="Add Card!" />
+                            <input type="text" class="form-control card" id = "focusedInput" data-ng-model= 'data.cardContent[stat.id]' placeholder="Add Card!" />
                             <!--<button data-ng-click="addCard(stat.id)">Add A Card!</button>-->
                         </form>
-                    </div>
-                </div>
-                <div class = "col-md-3 thumbnail panel">
+                    </footer>
+                </article>
+                <!--<div style = "clear:both"></div>-->
+                <div class = "col-md-3 status">
                     <form ng-submit = "addStatus()">
                     <input type="text" class="form-control" id = "focusedInput" data-ng-model="data.newStatusName" placeholder = "Add New Status.." />
 

@@ -87,6 +87,13 @@ app.service('statusService',function(){
         }
     };
 
+    this.randomColor = function(){
+        var i = Math.floor(Math.random()*10);
+        return colors[i] ;
+        //return "red";
+    };
+
+
     var status = [
 
     ];
@@ -98,4 +105,6 @@ app.service('statusService',function(){
         //    content : "dkjal"
         //}
     ];
+
+    var colors = ["#FFE4E1","#F5F5DC","#F5F5F5","#F0FFFF","#FFF8DC","#B0E0E6","#E0FFFF","#98FB98","#FFFACD","#C3F4BD"];
 });

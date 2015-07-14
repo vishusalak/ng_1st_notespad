@@ -1,82 +1,115 @@
-﻿* {
-    padding : 0px;
-    margin: 0px;
+﻿*{
+    padding : 0;
+    margin: 0;
 }
 body{
     background-color: #FFFF99;
+}
+.aColor{
+    color: #337ab7;
 }
 .navbar{
     margin-top: 35px;
     background-color: inherit;
     border: none;
-    font-family: "Reenie Beanie", arial, sans-serif;
-    font-weight: bold;
-    font-size: 22px;
+    font: bold 22px "Reenie Beanie", arial, sans-serif;
 }
-.navbar-brand{
-    font-size: 22px;
+.heading{
+    font-size: 30px;
     color: #337ab7;
 }
 
-.nav a{
-    border: none;
+.nav>li>a:hover,.nav>li>a:focus,.nav>li>a:active{
+    background: none;
+    border : none;
 }
 .navbar-nav>li>a {
     color: #337ab7;
     line-height: 22px;
     font-size: 22px;
 }
+
 #browserWarning{
     display: none;
 }
 
-.cardContainer {
+.statusContainer {
     width:1200px;
     margin-top: -40px;
 }
 
-.panel{
+.status{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-flex: 1;
     -webkit-box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
-    padding: 10px;
+    padding: 0px;
     margin : 10px;
     width : 280px;
-    background-color: #98FB98;
+    /*background-color: #98FB98;*/
+    border : solid 1px inherit ;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
 }
-.panel-body{
-    font-family:"Reenie Beanie",arial,sans-serif;
-    font-size:180%;
-
-
-}
-.panel-header{
-    border : none;
+.statusHeader{
+    margin :0px;
+    /*width: 280px;*/
+    min-height: 50px;
+    padding: 10px 20px;
+    /*border-bottom: solid 1px inherit;*/
     background-color: inherit;
-    display : inline-block;
+    font: bold 24px "Reenie Beanie", arial, sans-serif;
+    word-wrap: break-word;
+    /*display : inline;*/
 }
-.dropdown{
-    float: right;
+.dropdown,.btn{
+    margin : 0px;
+    width: 0px;
+    background: none;
 }
+.setBtn{
+    margin-left :2px;
+    right : 15px;
+    top: 10px;
+    position : absolute;
+    width:30px;
+    height:30px;
+    float : right;
+}
+
 .card{
-    margin: -5px -15px;
-    min-height: auto;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-flex: 1;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    padding : 10px;
+    margin: 10px ;
+    min-height: 80px;
     width : 260px;
+    border : solid 1px inherit;
+    background-color: ghostwhite;
 }
 .cardText{
-    width: 260px;
+    /*width: initial;*/
+    font-family:"Reenie Beanie",arial,sans-serif;
+    font-size: 25px;
+    line-height: 30px;
+    word-wrap: break-word;
 }
-.panel-footer{
-    border : none;
-    background-color: inherit;
-}
-.thumbnail{
-    margin : 10px;
+.cardClose{
+    /*height : 30px;*/
+    /*width : 30px;*/
+    margin-top: 2px;
+    margin-left:2px;
+    position : absolute;
+    bottom: 10px;
+    right : 30px;
 }
 .deleteBox{
-    font-family: "Reenie Beanie", arial, sans-serif;
-    font-weight: bold;
-    font-size: 25px;
+    font: bold 25px "Reenie Beanie", arial, sans-serif;
     bottom: 25px;
-    left: 0px;
+    left: 0;
     padding-left : 10px;
     padding-bottom: 10px;
     width : 75px;

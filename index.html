@@ -11,10 +11,10 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-inverse">
+    <nav class="navbar">
         <div class="container">
             <div class="navbar-header">
-                <a class="navbar-brand" href >All Projects!</a>
+                <a class="navbar-brand heading" href >All Projects!</a>
             </div>
             <div>
 
@@ -44,9 +44,9 @@
         <!--<div class="navbar navbar-fixed-bottom">-->
             <!--<div class="navbar-inner">-->
                 <!--<div class="container">-->
-                    <div class = "deleteBox">
-                        <div data-ng-controller="statusController">
-                                    <div data-drop="true" jqyoui-droppable = '{onDrop : "deleteItem()"}'>Drop here to Delete!</div>
+                    <div class = "deleteBox" data-drop="true" jqyoui-droppable = '{onDrop : "deleteItem()",onHover : "delBox()"}'>
+                        <div data-ng-controller="statusController" data-drop="true" jqyoui-droppable = '{onDrop : "deleteItem()",onHover : "delBox()"}'>
+                                    <div data-ng-model="mycolor" data-ng-style = "{color : mycolor}" data-drop="true" jqyoui-droppable = '{onDrop : "deleteItem()",onHover : "delBox()"}' >Drop here to Delete!</div>
                         </div>
                    </div>
                 <!--</div>-->
@@ -60,7 +60,6 @@
     <script src="Scripts/angular.js"></script>
     <script src="Scripts/angular-route.js"></script>
     <script src="http://code.angularjs.org/1.2.1/angular-sanitize.min.js"></script>
-    <script src="Scripts/sortable.min.js"></script>
     <script src ="Scripts/angular-dragdrop.min.js"></script>
     <script src="Scripts/ui-bootstrap-tpls-0.13.0.min.js"></script>
     <!-- UI Libs -->

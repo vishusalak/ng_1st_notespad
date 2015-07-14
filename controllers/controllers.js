@@ -4,7 +4,7 @@ app.controller('statusController',function($scope,$http,$modal,$log,statusServic
     function init() {
         $scope.status = statusService.getStatus();
         $scope.cards = statusService.getCards();
-
+        $scope.mycolor = 'black';
     }
 
     $scope.draggedItem = function(){
@@ -17,6 +17,11 @@ app.controller('statusController',function($scope,$http,$modal,$log,statusServic
         var status_id = this.card.status_id;
         statusService.deleteCard($rootScope.item.id);
         statusService.addCard(status_id,content,card_id);
+    };
+
+    $scope.randomColor = {
+
+        "background-color" : statusService.randomColor()
     };
 
     $scope.deleteItem = function (){
