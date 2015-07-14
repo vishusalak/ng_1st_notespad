@@ -3,7 +3,9 @@
         <br /><br />
         <script type="text/ng-template" id="addStatus.html">
             <div class="modal-header">
-                <h3 class="modal-title">Add a Status!</h3>
+                <h3 class="modal-title">Add a Status!
+                <button type="button" class="close" ng-click="cancel()">&times;</button>
+                </h3>
             </div>
             <div class="modal-body">
                 <form ng-submit="addNewStatus()">
@@ -11,8 +13,8 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-primary" ng-click="addNewStatus()">Add!</button>
-                <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+                <button class="btn btn-success" ng-click="addNewStatus()"><span class="glyphicon glyphicon-ok"></span></button>
+                <button class="btn btn-danger" ng-click="cancel()"><span class="glyphicon glyphicon-remove"></span></button>
             </div>
         </script>
             <div class="row statusContainer">
@@ -49,7 +51,7 @@
                         </form>
                     </footer>
                 </article>
-                <!--<div style = "clear:both"></div>-->
+                <div style = "clear:both"></div>
                 <div class = "col-md-3 status">
                     <form ng-submit = "addStatus()">
                     <input type="text" class="form-control" id = "focusedInput" data-ng-model="data.newStatusName" placeholder = "Add New Status.." />

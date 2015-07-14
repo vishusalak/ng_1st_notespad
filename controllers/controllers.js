@@ -79,6 +79,7 @@ app.controller('statusController',function($scope,$http,$modal,$log,statusServic
     };
 
     $scope.deleteAllLists = function(){
+        statusService.deleteAllCards();
         statusService.deleteAllStatus();
     };
 
