@@ -1,2 +1,2 @@
 # ng_1st_notespad
-demo - https://notespad.herokuapp.com/
+demo - http://notespad.herokuapp.com/
