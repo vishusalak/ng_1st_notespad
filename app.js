@@ -9,7 +9,9 @@ app.config(function ($routeProvider) {
                 controller: 'statusController',
                 templateUrl: '/partials/project.html'
             })
-        .otherwise({ redirectTo: '/project' });
+        .otherwise({ redirectTo: '/project'});
+
+    
 });
 
 
