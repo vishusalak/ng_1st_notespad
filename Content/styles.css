@@ -46,35 +46,30 @@ body{
     padding: 0px;
     margin : 10px;
     width : 280px;
-    /*background-color: #98FB98;*/
     border : solid 1px inherit ;
     border-radius: 5px;
     -webkit-border-radius: 5px;
 }
 .statusHeader{
     margin :0px;
-    /*width: 280px;*/
     min-height: 50px;
     padding: 10px 20px;
-    /*border-bottom: solid 1px inherit;*/
     background-color: inherit;
     font: bold 24px "Reenie Beanie", arial, sans-serif;
     word-wrap: break-word;
-    /*display : inline;*/
 }
 .dropdown,.btn{
     margin : 0px;
-    width: 0px;
+    padding: 0px;
     background: none;
 }
 .setBtn{
-    margin-left :2px;
-    right : 15px;
+    margin-left : 5px;
+    right : 10px;
     top: 10px;
     position : absolute;
-    width:30px;
-    height:30px;
     float : right;
+    font : normal 15px arial;
 }
 
 .card{
@@ -98,13 +93,11 @@ body{
     word-wrap: break-word;
 }
 .cardClose{
-    /*height : 30px;*/
-    /*width : 30px;*/
     margin-top: 2px;
     margin-left:2px;
     position : absolute;
     bottom: 10px;
-    right : 30px;
+    right : 10px;
 }
 .deleteBox{
     font: bold 25px "Reenie Beanie", arial, sans-serif;
@@ -119,6 +112,22 @@ body{
     border-right: 1px solid black;
     border-bottom: 1px solid black;
     -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
     border-radius: 10px;
+}
+.modal-footer>.btn {
+    width: 50px;
+    height : 30px;
+}
+/* for different colors */
+article:nth-child(4n + 1){
+    background-color: #98FB98;
+}
+article:nth-child(4n + 2){
+    background-color: #B0E0E6;
+}
+article:nth-child(4n + 3){
+     background-color:#C3F4BD;
+}
+article:nth-child(4n + 4){
+    background-color:#FFE4E1;
 }

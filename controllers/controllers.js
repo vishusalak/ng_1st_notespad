@@ -12,17 +12,18 @@ app.controller('statusController',function($scope,$http,$modal,$log,statusServic
     };
 
     $scope.droppedItem = function()
-    {   var card_id = $rootScope.item.id;
+    {
+        var card_id = $rootScope.item.id;
         var content = $rootScope.item.content;
-        var status_id = this.card.status_id;
+        var status_id = this.ob;
         statusService.deleteCard($rootScope.item.id);
         statusService.addCard(status_id,content,card_id);
     };
 
-    $scope.randomColor = {
-
-        "background-color" : statusService.randomColor()
-    };
+    //$scope.randomColor = {
+    //
+    //    "background-color" : statusService.randomColor()
+    //};
 
     $scope.deleteItem = function (){
         var card_id = $rootScope.item.id;

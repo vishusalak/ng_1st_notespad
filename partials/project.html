@@ -18,8 +18,8 @@
             </div>
         </script>
             <div class="row statusContainer">
-                <article class="col-md-3 status" data-ng-style="randomColor" data-ng-repeat="stat in status ">
-                    <header class="statusHeader" >
+                <article class="col-md-3 status" data-ng-repeat="stat in status ">
+                    <header class="statusHeader" ng-init="ob = stat.id" data-drop="true" data-jqyoui-options jqyoui-droppable = '{onDrop : "droppedItem()"}'>
                         {{stat.statusName}}
                         <div class="dropdown  setBtn">
                         <button class="btn dropdown-toggle" type="button" data-toggle = "dropdown">
@@ -32,21 +32,17 @@
                         </ul>
                         </div>
                     </header>
-                    <!--<div data-drop="true" jqyoui-droppable = '{onDrop : "droppedItem()"}'>-->
-                    <div class="StatusBody" data-ng-repeat = "card in cards | filter:{'status_id' : stat.id }:true" data-drop="true" data-jqyoui-options jqyoui-droppable = '{onDrop : "droppedItem()"}' >
-                        <!--<div class="card" data-drop="true" data-jqyoui-options jqyoui-droppable = '{onDrop : "droppedItem()"}'>-->
+                    <div class="StatusBody" data-ng-repeat = "card in cards | filter:{'status_id' : stat.id }:true" data-drop="true" ng-init="ob = stat.id" data-jqyoui-options jqyoui-droppable = '{onDrop : "droppedItem()"}' >
                         <div class = "card" data-drag="true" data-drop="true" jqyoui-droppable = '{onDrop : "droppedItem()"}' data-jqyoui-options="{revert: 'invalid'}" jqyoui-draggable='{animate:true ,onDrag :"draggedItem()"}' data-ng-model="card[stat.id]">
                            <p class="cardText">
-                               {{card.content}} <!--{{card.status_id}} {{card.id}}-->
+                               {{card.content}}
                            </p>
                             <button class="btn close cardClose" data-ng-click="deleteCard(card.id)"><span class="glyphicon glyphicon-trash"></span></button>
                         </div>
-                        <!--</div>-->
                     </div>
-                    <!--</div>-->
-                    <footer class="statusFooter" data-ng-controller="statusController">
+                    <footer class="statusFooter" data-ng-controller="statusController" ng-init="ob = stat.id" data-drop="true" data-jqyoui-options jqyoui-droppable = '{onDrop : "droppedItem()"}'>
                         <form name="myform" ng-submit="addCard(stat.id)">
-                            <input type="text" class="form-control card" id = "focusedInput" data-ng-model= 'data.cardContent[stat.id]' placeholder="Add Card!" />
+                            <input type="text" class="form-control card" id = "focusedInput"  data-ng-model= 'data.cardContent[stat.id]' placeholder="Add Card!" />
                             <!--<button data-ng-click="addCard(stat.id)">Add A Card!</button>-->
                         </form>
                     </footer>
